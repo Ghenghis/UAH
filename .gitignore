@@ -1,0 +1,38 @@
+# Unity
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# Harness runtime state (regenerated)
+.harness/state/
+.harness/heartbeat/
+.harness/logs/
+.harness/cost.log
+.harness/build.log
+.harness/lock
+.harness/quarantine/
+
+# Editor backups
+*~
+*.swp
+.vscode/
+.idea/
+
+# License files
+*.ulf
+*.ulf.*
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db

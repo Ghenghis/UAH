@@ -1,0 +1,9 @@
+[submodule "tools/unity-mcp"]
+	path = tools/unity-mcp
+	url = https://github.com/CoplayDev/unity-mcp.git
+[submodule "tools/game-ci"]
+	path = tools/game-ci
+	url = https://github.com/game-ci/cli.git
+[submodule "tools/unity-ai-bridge-reference"]
+	path = tools/unity-ai-bridge-reference
+	url = https://github.com/butterlatte-zhang/unity-ai-bridge.git
