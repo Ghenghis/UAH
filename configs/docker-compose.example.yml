@@ -1,0 +1,19 @@
+# Optional: local services for ComfyUI + any MCP helpers
+# Uncomment and adjust only if you want containerized generation.
+
+version: "3.8"
+services:
+  # Example only – most users run ComfyUI natively for GPU access
+  # comfyui:
+  #   image: your-preferred-comfyui-image
+  #   ports:
+  #     - "8188:8188"
+  #   volumes:
+  #     - ./ComfyUI:/app
+  #   deploy:
+  #     resources:
+  #       reservations:
+  #         devices:
+  #           - driver: nvidia
+  #             count: 1
+  #             capabilities: [gpu]

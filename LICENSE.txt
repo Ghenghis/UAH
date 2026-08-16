@@ -1,0 +1,5 @@
+This harness kit documentation, scripts, and example configs are released under CC0 1.0 Universal (public domain dedication).
+
+The individual open-source repositories listed in the shortlist retain their original licenses (mostly MIT). You must comply with those licenses when you clone and use them.
+
+No warranty is provided. This is a stitching guide, not a supported product.

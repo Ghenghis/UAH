@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "unity-coplay": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--from",
+        "git+https://github.com/CoplayDev/unity-mcp.git",
+        "unity-mcp"
+      ],
+      "env": {
+        "UNITY_PROJECT_PATH": "/REPLACE/WITH/ABSOLUTE/PATH/TO/UNITY/PROJECT"
+      }
+    }
+  }
+}
