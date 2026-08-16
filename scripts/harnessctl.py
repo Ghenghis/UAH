@@ -111,6 +111,11 @@ def cmd_start(args) -> int:
             (HARNESS_ROOT / "logs" / "mcp-config-writer.log").write_text(
                 f"{_now()}: mcp.json write failed: {e}\n"
             )
+        from heartbeat import Heartbeat
+
+        Heartbeat(HARNESS_ROOT / "heartbeat", "editor", interval=2.0).start()
+        Heartbeat(HARNESS_ROOT / "heartbeat", "mcp-unity", interval=2.0).start()
+
         if args.json:
             print(
                 json.dumps(

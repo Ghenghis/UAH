@@ -49,3 +49,6 @@ def test_start_acquires_lock_and_spawns_children(tmp_path, monkeypatch):
     assert (harness_root / "lock").exists()
     # Two children spawned: Unity Editor + unity-mcp
     assert fake_subprocess.Popen.call_count == 2
+    # Heartbeat files should have been touched
+    assert (harness_root / "heartbeat" / "editor").exists()
+    assert (harness_root / "heartbeat" / "mcp-unity").exists()
