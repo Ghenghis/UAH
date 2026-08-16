@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Unity AI Harness — Self-hosted Unity Game Factory</title>
+  <meta name='description' content='A self-hosted, local-first kit that turns a Windows 11 machine into a Unity AI development pipeline. One command to start, an agent drives the rest.'>
+  <script src='https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4'></script>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+  <link href='https://unpkg.com/aos@2.3.1/dist/aos.css' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap' rel='stylesheet'>
+  <link rel='stylesheet' href='assets/css/style.css'>
+  <script src='https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js'></script>
+</head>
+<body class='bg-slate-950 text-slate-100 font-sans overflow-x-hidden' style='font-family: "Inter", sans-serif;'>
+
+  <!-- Navigation -->
+  <nav class='fixed w-full z-50 top-0 left-0 border-b border-white/10 bg-slate-950/80 backdrop-blur-md'>
+    <div class='max-w-7xl mx-auto px-6 py-4 flex justify-between items-center'>
+      <a href='#' class='text-2xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent'>
+        <i class='fa-solid fa-bolt mr-2 text-cyan-400'></i>UAH
+      </a>
+      <div class='hidden md:flex gap-8 text-sm font-semibold'>
+        <a href='#vision' class='hover:text-cyan-400 transition-colors'>Vision</a>
+        <a href='#architecture' class='hover:text-cyan-400 transition-colors'>Architecture</a>
+        <a href='#how' class='hover:text-cyan-400 transition-colors'>How It Works</a>
+        <a href='#features' class='hover:text-cyan-400 transition-colors'>Features</a>
+        <a href='#commands' class='hover:text-cyan-400 transition-colors'>Commands</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class='relative min-h-screen flex items-center justify-center pt-24 overflow-hidden'>
+    <div class='absolute inset-0 bg-gradient-to-br from-indigo-950/40 via-purple-950/30 to-slate-950/80 z-0'></div>
+    <div class='absolute -top-40 -left-40 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse-slow'></div>
+    <div class='absolute -bottom-40 -right-40 w-96 h-96 bg-fuchsia-500/20 rounded-full blur-3xl animate-pulse-slow' style='animation-delay: 2s;'></div>
+
+    <div class='relative z-10 max-w-5xl mx-auto px-6 text-center' data-aos='zoom-in' data-aos-duration='1000'>
+      <span class='inline-block py-1 px-3 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-bold tracking-widest mb-6'>
+        LOCAL-FIRST · MCP-POWERED · SELF-HOSTED
+      </span>
+      <h1 class='text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight'>
+        Turn Windows 11 into a
+        <span class='bg-gradient-to-r from-cyan-400 via-indigo-400 to-fuchsia-400 bg-clip-text text-transparent'>Unity AI Game Factory</span>
+      </h1>
+      <p class='text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10'>
+        One command to start. Your agent (Claude, Cursor, Codex, OpenCodex) drives the rest. Domain reloads, crashes, hangs, and cost tracking are handled before they bite you.
+      </p>
+      <div class='flex flex-wrap justify-center gap-4'>
+        <a href='https://github.com/Ghenghis/UAH' target='_blank' class='px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 font-bold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all'>
+          <i class='fa-brands fa-github mr-2'></i>View on GitHub
+        </a>
+        <a href='#how' class='px-8 py-4 rounded-full border border-white/20 hover:bg-white/10 transition-all font-bold'>
+          See how it works
+        </a>
+      </div>
+    </div>
+
+    <div class='absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce'>
+      <i class='fa-solid fa-chevron-down text-slate-500 text-2xl'></i>
+    </div>
+  </section>
+
+  <!-- Vision / What it is -->
+  <section id='vision' class='py-24 relative'>
+    <div class='max-w-7xl mx-auto px-6'>
+      <div class='text-center mb-16' data-aos='fade-up'>
+        <h2 class='text-3xl md:text-5xl font-bold mb-4'>What is the Unity AI Harness?</h2>
+        <p class='text-slate-400 max-w-2xl mx-auto'>
+          A self-hosted, local-first kit that stitches together mature open-source tools and adds the missing supervisor layer that every Unity + MCP setup actually needs.
+        </p>
+      </div>
+
+      <div class='grid md:grid-cols-3 gap-8'>
+        <div class='p-8 rounded-2xl bg-slate-900/60 border border-white/10 hover:border-cyan-500/40 transition-all hover:-translate-y-1' data-aos='fade-up' data-aos-delay='0'>
+          <div class='w-14 h-14 rounded-xl bg-cyan-500/20 flex items-center justify-center mb-6'>
+            <i class='fa-solid fa-robot text-2xl text-cyan-400'></i>
+          </div>
+          <h3 class='text-xl font-bold mb-3'>Bring Your Own Agent</h3>
+          <p class='text-slate-400'>Claude Code, Cursor, Codex, OpenCodex — anything that speaks MCP. No vendor lock-in, no SaaS tax.</p>
+        </div>
+        <div class='p-8 rounded-2xl bg-slate-900/60 border border-white/10 hover:border-indigo-500/40 transition-all hover:-translate-y-1' data-aos='fade-up' data-aos-delay='100'>
+          <div class='w-14 h-14 rounded-xl bg-indigo-500/20 flex items-center justify-center mb-6'>
+            <i class='fa-solid fa-shield-halved text-2xl text-indigo-400'></i>
+          </div>
+          <h3 class='text-xl font-bold mb-3'>Built for Real Failure Modes</h3>
+          <p class='text-slate-400'>Domain reloads, Editor hangs, MCP crashes, and Personal-tier license caps are handled, logged, and reported.</p>
+        </div>
+        <div class='p-8 rounded-2xl bg-slate-900/60 border border-white/10 hover:border-fuchsia-500/40 transition-all hover:-translate-y-1' data-aos='fade-up' data-aos-delay='200'>
+          <div class='w-14 h-14 rounded-xl bg-fuchsia-500/20 flex items-center justify-center mb-6'>
+            <i class='fa-solid fa-box-open text-2xl text-fuchsia-400'></i>
+          </div>
+          <h3 class='text-xl font-bold mb-3'>Local Assets, Local Builds</h3>
+          <p class='text-slate-400'>Works with the Kenny pack on disk and ships pure-local Unity builds with `harnessctl build --local`.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section id='architecture' class='py-24 bg-slate-900/50'>
+    <div class='max-w-7xl mx-auto px-6'>
+      <div class='text-center mb-16' data-aos='fade-up'>
+        <h2 class='text-3xl md:text-5xl font-bold mb-4'>End-to-End Architecture</h2>
+        <p class='text-slate-400 max-w-2xl mx-auto'>A single supervisor orchestrates the Editor, MCP bridges, file-IPC state, heartbeats, and cost metering.</p>
+      </div>
+
+      <div class='p-6 rounded-2xl bg-slate-950/70 border border-white/10 overflow-x-auto' data-aos='fade-up' data-aos-duration='1000'>
+        <pre class='mermaid text-center'>
+flowchart TB
+    subgraph Agent
+        A[Claude / Cursor / Codex / OpenCodex]
+    end
+    A -->|MCP stdio| B[harnessctl]
+    B -->|spawns| C[Unity Editor]
+    B -->|spawns| D[unity-mcp Bridge]
+    B -->|writes| E[.harness state / mcp.json]
+    B -->|monitors| F[Heartbeat + File IPC]
+    B -->|meters| G[Cost Logger]
+    C -->|WebSocket / HTTP| D
+    D -->|tools| H[GameObjects, Scenes, Assets]
+    B -->|batchmode| I[Game-CI / Unity Build]
+    J[GitLab Mirror] -.sync.-> B
+        </pre>
+      </div>
+
+      <div class='mt-12 grid md:grid-cols-2 gap-8'>
+        <div class='p-6 rounded-2xl border border-white/10 bg-slate-900/60' data-aos='fade-right'>
+          <h3 class='text-xl font-bold mb-3 text-cyan-400'><i class='fa-solid fa-layer-group mr-2'></i>Adopted wholesale</h3>
+          <ul class='space-y-2 text-slate-300'>
+            <li><i class='fa-solid fa-check text-cyan-500 mr-2'></i>CoplayDev/unity-mcp — primary bridge (~47 tools)</li>
+            <li><i class='fa-solid fa-check text-cyan-500 mr-2'></i>game-ci/cli + unity-builder — build runner</li>
+            <li><i class='fa-solid fa-check text-cyan-500 mr-2'></i>butterlatte-zhang/unity-ai-bridge — file-IPC pattern</li>
+            <li><i class='fa-solid fa-check text-cyan-500 mr-2'></i>OpenCodex — model flexibility</li>
+          </ul>
+        </div>
+        <div class='p-6 rounded-2xl border border-white/10 bg-slate-900/60' data-aos='fade-left'>
+          <h3 class='text-xl font-bold mb-3 text-fuchsia-400'><i class='fa-solid fa-hammer mr-2'></i>Built by the kit</h3>
+          <ul class='space-y-2 text-slate-300'>
+            <li><i class='fa-solid fa-check text-fuchsia-500 mr-2'></i>harnessctl supervisor</li>
+            <li><i class='fa-solid fa-check text-fuchsia-500 mr-2'></i>File-IPC state layer</li>
+            <li><i class='fa-solid fa-check text-fuchsia-500 mr-2'></i>License helper</li>
+            <li><i class='fa-solid fa-check text-fuchsia-500 mr-2'></i>Cost meter & GitLab mirror</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id='how' class='py-24'>
+    <div class='max-w-7xl mx-auto px-6'>
+      <div class='text-center mb-16' data-aos='fade-up'>
+        <h2 class='text-3xl md:text-5xl font-bold mb-4'>How It Works</h2>
+        <p class='text-slate-400 max-w-2xl mx-auto'>From a fresh Windows 11 box to an agent-controllable Unity Editor in a few steps.</p>
+      </div>
+
+      <div class='relative'>
+        <div class='hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-indigo-500 to-fuchsia-500 -translate-y-1/2 z-0'></div>
+        <div class='grid md:grid-cols-4 gap-8 relative z-10'>
+          <div class='text-center' data-aos='fade-up' data-aos-delay='0'>
+            <div class='w-16 h-16 mx-auto rounded-full bg-slate-950 border-2 border-cyan-500 flex items-center justify-center text-2xl font-bold mb-4'>1</div>
+            <h3 class='font-bold mb-2'>Clone & Setup</h3>
+            <p class='text-sm text-slate-400'>Run <code class='bg-slate-800 px-1 rounded'>bash scripts/setup.sh</code> to create the Unity project, symlink assets, and install the MCP bridge.</p>
+          </div>
+          <div class='text-center' data-aos='fade-up' data-aos-delay='100'>
+            <div class='w-16 h-16 mx-auto rounded-full bg-slate-950 border-2 border-indigo-500 flex items-center justify-center text-2xl font-bold mb-4'>2</div>
+            <h3 class='font-bold mb-2'>harnessctl start</h3>
+            <p class='text-sm text-slate-400'>Spawns the Editor, primary MCP, writes <code class='bg-slate-800 px-1 rounded'>mcp.json</code>, and starts heartbeats.</p>
+          </div>
+          <div class='text-center' data-aos='fade-up' data-aos-delay='200'>
+            <div class='w-16 h-16 mx-auto rounded-full bg-slate-950 border-2 border-fuchsia-500 flex items-center justify-center text-2xl font-bold mb-4'>3</div>
+            <h3 class='font-bold mb-2'>Agent Takes Control</h3>
+            <p class='text-sm text-slate-400'>Your agent discovers the MCP server and starts creating GameObjects, editing scripts, and managing scenes.</p>
+          </div>
+          <div class='text-center' data-aos='fade-up' data-aos-delay='300'>
+            <div class='w-16 h-16 mx-auto rounded-full bg-slate-950 border-2 border-pink-500 flex items-center justify-center text-2xl font-bold mb-4'>4</div>
+            <h3 class='font-bold mb-2'>Build & Ship</h3>
+            <p class='text-sm text-slate-400'><code class='bg-slate-800 px-1 rounded'>harnessctl build --local --target Windows64</code> produces a runnable player.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id='features' class='py-24 bg-slate-900/50'>
+    <div class='max-w-7xl mx-auto px-6'>
+      <div class='text-center mb-16' data-aos='fade-up'>
+        <h2 class='text-3xl md:text-5xl font-bold mb-4'>Everything Included</h2>
+        <p class='text-slate-400 max-w-2xl mx-auto'>A complete operator surface so the Editor stays alive, the agent stays connected, and you stay informed.</p>
+      </div>
+
+      <div class='grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
+        <div class='p-6 rounded-xl bg-slate-900/60 border border-white/10' data-aos='fade-up' data-aos-delay='0'>
+          <i class='fa-solid fa-heart-pulse text-3xl text-cyan-400 mb-4'></i>
+          <h3 class='font-bold mb-2'>Heartbeat Monitor</h3>
+          <p class='text-sm text-slate-400'>Detects Editor hangs, MCP death, and restart loops with exponential backoff.</p>
+        </div>
+        <div class='p-6 rounded-xl bg-slate-900/60 border border-white/10' data-aos='fade-up' data-aos-delay='50'>
+          <i class='fa-solid fa-rotate text-3xl text-indigo-400 mb-4'></i>
+          <h3 class='font-bold mb-2'>Domain-Reload Survival</h3>
+          <p class='text-sm text-slate-400'>Reconnect and health probes keep the agent session alive through C# script edits.</p>
+        </div>
+        <div class='p-6 rounded-xl bg-slate-900/60 border border-white/10' data-aos='fade-up' data-aos-delay='100'>
+          <i class='fa-solid fa-file-contract text-3xl text-fuchsia-400 mb-4'></i>
+          <h3 class='font-bold mb-2'>File-IPC State</h3>
+          <p class='text-sm text-slate-400'>Quarantine-safe, stale-detecting state store that survives process restarts.</p>
+        </div>
+        <div class='p-6 rounded-xl bg-slate-900/60 border border-white/10' data-aos='fade-up' data-aos-delay='150'>
+          <i class='fa-solid fa-coins text-3xl text-pink-400 mb-4'></i>
+          <h3 class='font-bold mb-2'>Cost Meter</h3>
+          <p class='text-sm text-slate-400'>Parses Claude Code, Codex, and OpenCodex token spend and logs it per turn.</p>
+        </div>
+        <div class='p-6 rounded-xl bg-slate-900/60 border border-white/10' data-aos='fade-up' data-aos-delay='200'>
+          <i class='fa-solid fa-stethoscope text-3xl text-emerald-400 mb-4'></i>
+          <h3 class='font-bold mb-2'>harnessctl doctor</h3>
+          <p class='text-sm text-slate-400'>Pre-flight checks for Python, Unity, uv, the Kenny pack, and MCP connectivity.</p>
+        </div>
+        <div class='p-6 rounded-xl bg-slate-900/60 border border-white/10' data-aos='fade-up' data-aos-delay='250'>
+          <i class='fa-solid fa-id-card text-3xl text-amber-400 mb-4'></i>
+          <h3 class='font-bold mb-2'>License Helper</h3>
+          <p class='text-sm text-slate-400'>Activates and reports Unity license status with Personal-tier messaging.</p>
+        </div>
+        <div class='p-6 rounded-xl bg-slate-900/60 border border-white/10' data-aos='fade-up' data-aos-delay='300'>
+          <i class='fa-solid fa-hammer text-3xl text-rose-400 mb-4'></i>
+          <h3 class='font-bold mb-2'>Local Unity Build</h3>
+          <p class='text-sm text-slate-400'>`harnessctl build --local` drives Unity batchmode directly, no CI tokens required.</p>
+        </div>
+        <div class='p-6 rounded-xl bg-slate-900/60 border border-white/10' data-aos='fade-up' data-aos-delay='350'>
+          <i class='fa-solid fa-code-branch text-3xl text-violet-400 mb-4'></i>
+          <h3 class='font-bold mb-2'>GitLab Mirror</h3>
+          <p class='text-sm text-slate-400'>One-shot script keeps GitHub and a GitLab remote in sync after every push.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Commands -->
+  <section id='commands' class='py-24'>
+    <div class='max-w-7xl mx-auto px-6'>
+      <div class='text-center mb-16' data-aos='fade-up'>
+        <h2 class='text-3xl md:text-5xl font-bold mb-4'>Command Surface</h2>
+        <p class='text-slate-400 max-w-2xl mx-auto'>One CLI to supervise the whole pipeline.</p>
+      </div>
+
+      <div class='grid md:grid-cols-2 gap-4 max-w-4xl mx-auto'>
+        <div class='p-4 rounded-lg bg-slate-900/60 border border-white/10 flex items-center' data-aos='fade-up' data-aos-delay='0'>
+          <code class='text-cyan-400 font-mono text-sm w-40 shrink-0'>harnessctl start</code>
+          <span class='text-slate-300 text-sm'>Start the Editor, MCP, heartbeats, and cost meter.</span>
+        </div>
+        <div class='p-4 rounded-lg bg-slate-900/60 border border-white/10 flex items-center' data-aos='fade-up' data-aos-delay='50'>
+          <code class='text-cyan-400 font-mono text-sm w-40 shrink-0'>harnessctl stop</code>
+          <span class='text-slate-300 text-sm'>Terminate children and release the harness lock.</span>
+        </div>
+        <div class='p-4 rounded-lg bg-slate-900/60 border border-white/10 flex items-center' data-aos='fade-up' data-aos-delay='100'>
+          <code class='text-cyan-400 font-mono text-sm w-40 shrink-0'>harnessctl status</code>
+          <span class='text-slate-300 text-sm'>Show running state, pids, and MCP health.</span>
+        </div>
+        <div class='p-4 rounded-lg bg-slate-900/60 border border-white/10 flex items-center' data-aos='fade-up' data-aos-delay='150'>
+          <code class='text-cyan-400 font-mono text-sm w-40 shrink-0'>harnessctl build</code>
+          <span class='text-slate-300 text-sm'>Local Unity batchmode build with target aliases.</span>
+        </div>
+        <div class='p-4 rounded-lg bg-slate-900/60 border border-white/10 flex items-center' data-aos='fade-up' data-aos-delay='200'>
+          <code class='text-cyan-400 font-mono text-sm w-40 shrink-0'>harnessctl doctor</code>
+          <span class='text-slate-300 text-sm'>Pre-flight environment checks, JSON or human readable.</span>
+        </div>
+        <div class='p-4 rounded-lg bg-slate-900/60 border border-white/10 flex items-center' data-aos='fade-up' data-aos-delay='250'>
+          <code class='text-cyan-400 font-mono text-sm w-40 shrink-0'>harnessctl enable</code>
+          <span class='text-slate-300 text-sm'>Persist optional MCPs to the harness config.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success criteria -->
+  <section class='py-24 bg-gradient-to-br from-indigo-950/40 to-slate-950/80'>
+    <div class='max-w-5xl mx-auto px-6 text-center' data-aos='fade-up'>
+      <h2 class='text-3xl md:text-5xl font-bold mb-6'>What Success Looks Like</h2>
+      <p class='text-lg text-slate-300 mb-8'>A user with a fresh Windows 11 box, Kenny pack on disk, and Claude Code installed:</p>
+      <div class='flex flex-wrap justify-center gap-4'>
+        <span class='px-4 py-2 rounded-full bg-slate-900/80 border border-cyan-500/30 text-cyan-300 text-sm'>Clone</span>
+        <span class='px-4 py-2 rounded-full bg-slate-900/80 border border-indigo-500/30 text-indigo-300 text-sm'>setup.sh</span>
+        <span class='px-4 py-2 rounded-full bg-slate-900/80 border border-fuchsia-500/30 text-fuchsia-300 text-sm'>harnessctl start</span>
+        <span class='px-4 py-2 rounded-full bg-slate-900/80 border border-pink-500/30 text-pink-300 text-sm'>Agent drives Unity</span>
+        <span class='px-4 py-2 rounded-full bg-slate-900/80 border border-emerald-500/30 text-emerald-300 text-sm'>Domain reloads survive</span>
+        <span class='px-4 py-2 rounded-full bg-slate-900/80 border border-amber-500/30 text-amber-300 text-sm'>Local build ships</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class='py-12 border-t border-white/10 text-center text-slate-500 text-sm'>
+    <p>Built with open-source love · Tailwind CSS, Mermaid, AOS, Font Awesome · August 2026</p>
+    <p class='mt-2'>Unity AI Harness — <a href='https://github.com/Ghenghis/UAH' target='_blank' class='text-cyan-400 hover:underline'>github.com/Ghenghis/UAH</a></p>
+  </footer>
+
+  <script src='https://unpkg.com/aos@2.3.1/dist/aos.js'></script>
+  <script src='assets/js/main.js'></script>
+</body>
+</html>

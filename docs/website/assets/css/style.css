@@ -1,0 +1,85 @@
+/* Unity AI Harness — Website custom styles */
+
+:root {
+  --cyan-glow: rgba(34, 211, 238, 0.35);
+  --indigo-glow: rgba(99, 102, 241, 0.35);
+  --fuchsia-glow: rgba(232, 121, 249, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color-scheme: dark;
+}
+
+/* Animated background pulse */
+@keyframes pulse-slow {
+  0%, 100% { transform: scale(1); opacity: 0.2; }
+  50% { transform: scale(1.1); opacity: 0.35; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+/* Mermaid diagram theming */
+.mermaid {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node polygon,
+.mermaid .node ellipse {
+  fill: #0f172a !important;
+  stroke: #22d3ee !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid .node .label {
+  color: #e2e8f0 !important;
+}
+
+.mermaid .edgePath .path {
+  stroke: #818cf8 !important;
+  stroke-width: 2px !important;
+}
+
+.mermaid .arrowheadPath {
+  fill: #818cf8 !important;
+}
+
+.mermaid .edgeLabel {
+  background-color: #0f172a !important;
+  color: #e2e8f0 !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Code styling */
+code {
+  font-family: 'Fira Code', 'Consolas', monospace;
+}
