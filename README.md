@@ -32,6 +32,14 @@ See **[VISION.md](VISION.md)** for the complete picture (mission, constraints, w
 **OpenCodex is now included (Tier 1.5).**  
 It lets you run the official Codex CLI/App/SDK and Claude Code against any model — including your local ones. This is one of the highest-leverage additions for cost, privacy, and model choice while still using the tools you already planned to hand the kit to.
 
+## Releases
+
+The **complete packaged kit** (submodules expanded, ~24 MB) is a GitHub Release asset, not a file committed into this tree.
+
+- Latest: [v0.4.0](https://github.com/Ghenghis/UAH/releases/tag/v0.4.0)
+- Download `unity-ai-harness.zip`, unzip, and you get a single `unity-ai-harness/` folder.
+- This repository (`master`) is the source: scripts, docs, tests, and **git submodule pointers** for `tools/`. Clone with `--recurse-submodules` if you want those tools from source.
+
 ## Hosting
 
 This kit is mirrored to **both GitHub and GitLab**. `scripts/mirror-to-gitlab.sh` pushes to the configured GitLab remote after every `git push` to the GitHub one.

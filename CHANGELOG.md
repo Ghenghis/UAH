@@ -10,6 +10,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - `docs/UPGRADE_CONTRACT.md` — branching, commit, and release convention for the project.
 - `docs/UPGRADE_PLAN.md` — milestone-driven upgrade action plan.
+- Project website at `docs/website/`.
+- README Releases section pointing at the packaged GitHub Release (not a zip in-tree).
 
 ## [0.4.0] — 2026-08-16
 
